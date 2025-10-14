@@ -13,7 +13,6 @@
         <ul>
             <li>{{ $genre['name'] }}</li>
             <li>{{ $genre['description'] }}</li>
-            <li>{{ $genre['genre_id'] }}</li>
         </ul>
     @endforeach
 

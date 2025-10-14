@@ -13,8 +13,6 @@
         <ul>
             <li>{{ $item['title'] }}</li>
             <li>{{ $item['description'] }}</li>
-            <li>{{ $item['price'] }}</li>
-            <li>{{ $item['stock'] }}</li>
         </ul>
     @endforeach
 

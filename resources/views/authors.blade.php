@@ -14,7 +14,6 @@
             <li>{{ $author['name'] }}</li>
             <li>{{ $author['bio'] }}</li>
             <li>{{ $author['motto'] }}</li>
-            <li>{{ $author['author_id'] }}</li>
         </ul>
     @endforeach
     
