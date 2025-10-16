@@ -27,5 +27,13 @@ class GenreSeeder extends Seeder
             'name' => 'Romance',
             'description' => 'Berfokus pada kisah cinta dan hubungan emosional antar tokoh.'
         ]);
+        Genre::create([
+            'name' => 'Misteri',
+            'description' => 'Bercerita tentang pemecahan kasus atau rahasia yang sulit ditebak.'
+        ]);
+        Genre::create([
+            'name' => 'Biografi',
+            'description' => 'Mengulas perjalanan hidup tokoh nyata dan pengalaman pentingnya.'
+        ]);
     }
 }
