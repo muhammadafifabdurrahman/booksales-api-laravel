@@ -16,31 +16,31 @@ class AuthorSeeder extends Seeder
         Author::create([
             'name' => 'Ahmad Ramadhan',
             'bio' => 'Penulis novel petualangan dan perjalanan spiritual.',
-            'motto' => 'Menulis adalah perjalanan tanpa akhir.',
+            'photo' => 'ahmad.jpg',
         ]);
 
         Author::create([
             'name' => 'Siti Lestari',
             'bio' => 'Penulis fiksi dengan nuansa keluarga dan drama kehidupan.',
-            'motto' => 'Cerita terbaik lahir dari hati yang tulus.',
+            'photo' => 'siti.jpg.',
         ]);
 
         Author::create([
             'name' => 'Dimas Pratama',
             'bio' => 'Spesialis cerita fantasi dan dunia imajinatif.',
-            'motto' => 'Imajinasi adalah pintu ke dunia lain.',
+            'photo' => 'dimas.jpg',
         ]);
 
         Author::create([
             'name' => 'Rina Amelia',
             'bio' => 'Penulis kisah romansa dan kehidupan remaja.',
-            'motto' => 'Setiap kata punya rasa.',
+            'photo' => 'rina.jpg',
         ]);
 
         Author::create([
             'name' => 'Bagus Santoso',
             'bio' => 'Penulis thriller dan misteri dengan alur menegangkan.',
-            'motto' => 'Misteri dimulai saat pintu ditutup.',
+            'photo' => 'bagus.jpg',
         ]);
     }
 }
