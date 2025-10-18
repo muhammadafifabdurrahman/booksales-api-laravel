@@ -12,15 +12,16 @@ Route::get('/user', function (Request $request) {
 
 
 
-Route::get('/books', [BookController::class, 'index']);
-Route::post('/books', [BookController::class, 'store']);
+Route::apiResource('/books', BookController::class);
+Route::post('/books/{id}', [BookController::class, 'update']);
 
 
+Route::apiResource('/genres', GenreController::class);
+Route::post('/genres/{id}', [GenreController::class, 'update']);
 
-Route::get('/genres', [GenreController::class, 'index']);
-Route::post('/genres', [GenreController::class, 'store']);
+
+Route::apiResource('/authors', AuthorController::class);
+Route::post('/authors/{id}', [AuthorController::class, 'update']);
 
 
-Route::get('/authors', [AuthorController::class, 'index']);
-Route::post('/authors', [AuthorController::class, 'store']);
 
