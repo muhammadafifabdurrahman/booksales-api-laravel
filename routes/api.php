@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\GenreController;
@@ -11,17 +12,31 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 
-
-Route::apiResource('/books', BookController::class);
-Route::post('/books/{id}', [BookController::class, 'update']);
-
-
-Route::apiResource('/genres', GenreController::class);
-Route::post('/genres/{id}', [GenreController::class, 'update']);
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:api');
 
 
-Route::apiResource('/authors', AuthorController::class);
-Route::post('/authors/{id}', [AuthorController::class, 'update']);
+Route::apiResource('/books', BookController::class)->only(['index', 'show']);
+Route::apiResource('/genres', GenreController::class)->only(['index', 'show']);
+Route::apiResource('/authors', AuthorController::class)->only(['index', 'show']);
+
+
+Route::middleware(['auth:api'])->group(function () {
+
+    Route::middleware(['role:admin'])->group(function () {
+        Route::apiResource('/books', BookController::class)->only(['store', 'update', 'destroy']);
+        Route::post('/books/{id}', [BookController::class, 'update']);
+        Route::apiResource('/genres', GenreController::class)->only(['store', 'update', 'destroy']);
+        Route::post('/genres/{id}', [GenreController::class, 'update']);
+        Route::apiResource('/authors', AuthorController::class)->only(['store', 'update', 'destroy']);
+        Route::post('/authors/{id}', [AuthorController::class, 'update']);
+    });
+
+});
+
+
+
 
 
 

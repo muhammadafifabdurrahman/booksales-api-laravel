@@ -13,14 +13,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-       $this->call([
-        GenreSeeder::class,
-       ]);
-       $this->call([
-        BookSeeder::class,
-       ]);
-       $this->call([
-        AuthorSeeder::class,
-       ]);
+        $this->call([
+            GenreSeeder::class,
+        ]);
+        $this->call([
+            BookSeeder::class,
+        ]);
+        $this->call([
+            AuthorSeeder::class,
+        ]);
+        $this->call([
+            UserSeeder::class,
+        ]);
     }
 }
